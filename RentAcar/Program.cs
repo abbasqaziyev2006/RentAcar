@@ -11,13 +11,13 @@ namespace RentAcar
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
-            var app = builder.Build();
             var connectString = builder.Configuration.GetConnectionString("Default");
             builder.Services.AddDbContext<AppDbContext>(options => {
                 options.UseSqlServer(connectString);
             });
 
+            var app = builder.Build();
+        
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
