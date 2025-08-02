@@ -47,7 +47,7 @@
             )
         }
         $("#de-preloader").append(myHtml);        
-        $('.custom-loader-image').prepend('<img src="'+preloader_custom_image+'" />');
+        $('.custom-loader-image').prepend('<img src="~/'+preloader_custom_image+'" />');
         $('.text').css('margin-top',loading_text_position);
      }
      
@@ -1622,7 +1622,7 @@
         function formatState (state) {
           if (!state.id) { return state.text; }
           var $state = $(
-            '<span><img src="' + $(state.element).attr('data-src') + '" class="img-flag" /> ' + state.text + '</span>'
+            '<span><img src="~/' + $(state.element).attr('data-src') + '" class="img-flag" /> ' + state.text + '</span>'
           );
           return $state;
         };
